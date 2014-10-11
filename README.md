@@ -1,11 +1,17 @@
-restify-starter
-===============
-A restify.js starter template that includes orm (node-orm2), overridable auto-routes for your models, logging (bunyan), environment config (nconf), and folder structure. This project will save you hours of headaches getting started with restify, based on real-world production APIs.
+# restify-starter
+This project is a starter template for restify.js that includes:
+* orm (node-orm2)
+* overridable auto-routes for your models
+* logging (bunyan)
+* environment config (nconf)
+* database migrations (node-db-migrate)
+* defined project structure
+* db library for executing custom sql and stored procs
 
+The goal is to give node.js API authors a starting point that will save you hours of headaches and give you a smarter starting point for your API. The project is based on real-world production APIs.
 
-Development Setup
------------------
-Currently this starter kit only supports Postgresql.  It's not difficult to support any database that node-orm2 can support though, including MySQL, MariaDB, and MongoDB.
+## Database Setup
+Currently this starter kit only supports Postgresql.  It's not difficult to support any database that node-orm2 can support though, including MySQL, MariaDB, and MongoDB. 
 
 1. After cloning this repository locally, run `npm install` to download and install all the node_modules.
 2. Install postgres locally: `brew install postgresql`
