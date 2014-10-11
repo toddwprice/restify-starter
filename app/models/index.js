@@ -2,17 +2,24 @@ var orm = require('orm');
 var settings = require('../../config/settings');
 var connection = null;
 
-function setup(db, cb) {
+function setup(db, syncModels, cb) {
 
   require('./customTypes')(orm, db);
   
   require('./post')(orm,db);
   require('./comment')(orm,db);
+
+  if (syncModels) {
+    db.sync(function(err) {
+      if (err) { console.log('sync error:' , err); }
+    });
+  }
+
   // console.log("MODELS: ", db.models);
   return cb(null, db);
 }
 
-module.exports = function (cb) {
+module.exports = function (cb, syncModels) {
   if (connection) return cb(null, connection);
 
   orm.connect(settings.database, function (err, db) {
@@ -20,6 +27,6 @@ module.exports = function (cb) {
 
     connection = db;
     db.settings.set('instance.returnAllErrors', true);
-    setup(db, cb);
+    setup(db, syncModels, cb);
   });
 };

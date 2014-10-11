@@ -3,7 +3,7 @@ var settings = require('../../config/settings')
   , handlers = require('../core/handlers')
   , singularize = require('../../config/singularize')
   , make_filter = require('../core/filters')
-  , helpers = require('./_helpers');
+  , helpers = require('../core/controllerHelpers');
 
 
 var getModelName = function (req, next) {
