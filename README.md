@@ -31,7 +31,7 @@ Run `node syncModels` to sync the models with your database.
 Run the database migrations to insert some test data: `db-migrate up --config config/database.json`
 
 ## Run Tests
-* At the command, run `mocha`. It should successfully run all the unit tests. If so, congrats! You're all set.
+At the command, run `mocha`. It should successfully run all the unit tests. If so, congrats! You're all set.
 
 ## Run the API server
 To run the API, `node server` to run in local mode on port 3000. In production, configuration management allows you to specify what port to run on (currently port 80). Depending on whether you are deploying behind a proxy or load balancer, hosting requirements, etc. this may need to change.
