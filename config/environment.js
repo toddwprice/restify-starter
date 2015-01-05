@@ -1,16 +1,16 @@
-var path     = require('path');
-var settings = require('./settings');
-var models   = require('../app/models/');
+var path        = require('path')
+    , settings  = require('./settings')
+    , models    = require('../app/models/');
 
 module.exports = function (server) {
     server.use(Restify.CORS());
     server.use(Restify.acceptParser(server.acceptable));
-    //server.use(Restify.authorizationParser());
     server.use(Restify.dateParser());
     server.use(Restify.queryParser());
-    //server.use(Restify.jsonp());
-    //server.use(Restify.gzipResponse());
+    server.use(Restify.gzipResponse());
     server.use(Restify.bodyParser());
+    //server.use(Restify.authorizationParser());
+    //server.use(Restify.jsonp());
 
     server.use(function (req, res, next) {
       models(function (err, db) {

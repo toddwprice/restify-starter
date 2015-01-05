@@ -1,4 +1,3 @@
-
 var utils = {
 	mergeProperties : function(object, params, forbiddenProps) {
 		if (!forbiddenProps) {

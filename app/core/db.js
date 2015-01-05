@@ -1,7 +1,7 @@
-var settings = require('../../config/settings');
-var MySQL= require('mysql');
-var Pool = require('generic-pool');
-var EasyMySQL = require('easy-mysql');
+var settings 		= require('../../config/settings')
+		, MySQL 		= require('mysql')
+		, Pool 			= require('generic-pool')
+		, EasyMySQL = require('easy-mysql');
 
 var mysql = EasyMySQL.connect_with_easy_pool(settings.database);
 

@@ -1,19 +1,21 @@
-var settings = require('../../config/settings')
-  , utils = require('../core/utils')
-  , handlers = require('../core/handlers')
+var settings    = require('../../config/settings')
+  , utils       = require('../core/utils')
+  , handlers    = require('../core/handlers')
   , singularize = require('../../config/singularize')
   , make_filter = require('../core/filters')
-  , helpers = require('../core/controllerHelpers');
+  , helpers     = require('../core/controllerHelpers');
 
 
 var getModelName = function (req, next) {
   var name = req.params.model
   if (req.models[name]) {
-    return name
-  } else if (req.models[singularize[name]]) {
-    return singularize[name]
-  } else {
-    return next(new Restify.ResourceNotFoundError("No model defined for " + name))
+    return name;
+  } 
+  else if (req.models[singularize[name]]) {
+    return singularize[name];
+  } 
+  else {
+    return next(new Restify.ResourceNotFoundError("No model defined for " + name));
   }
 }
 

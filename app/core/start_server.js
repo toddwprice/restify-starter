@@ -1,11 +1,10 @@
-var settings    = require('../../config/settings');
-var environment = require('../../config/environment');
-var routes      = require('../../config/routes');
-var bunyan 		= require('bunyan');
-var fs 			= require('fs');
-var moment		= require('moment');
-var path		= require('path');
-
+var settings    	= require('../../config/settings')
+		, environment = require('../../config/environment')
+		, routes      = require('../../config/routes')
+		, bunyan 			= require('bunyan')
+		, fs 					= require('fs')
+		, moment			= require('moment')
+		, path				= require('path');
 
 Restify = require('restify');
 

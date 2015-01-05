@@ -1,11 +1,9 @@
-var orm = require('orm');
-var settings = require('../../config/settings');
-var connection = null;
+var orm           = require('orm')
+    , settings    = require('../../config/settings')
+    , connection  = null;
 
 function setup(db, syncModels, cb) {
-
   require('./customTypes')(orm, db);
-  
   require('./post')(orm,db);
   require('./comment')(orm,db);
 
